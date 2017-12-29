@@ -14,6 +14,28 @@ $( document ).ready(function() {
 	function showData(resp) {
 		var arrayPokemons = resp.results;
 		
+	    arrayPokemons.forEach(function showPokemon(pokemon, i) {
+	    	i += 1;
+
+	    	var rowPokemon = $("<tr></tr>");
+	    	tablePokemons.append(rowPokemon);
+	    	
+	    	var namePokemon = $("<td>" + pokemon.name + "</td>");
+	    	rowPokemon.append(namePokemon);
+
+	    	var imagePokemon = $("<td><img src='https://pokeapi.co/media/img/" + i + ".png' alt='obrazek'></td>")
+			rowPokemon.append(imagePokemon);
+
+	    });
+	    
+	};
+
+	getPokemon();
+
+	/*
+	function showData(resp) {
+		var arrayPokemons = resp.results;
+		
 	    arrayPokemons.forEach(function showPokemonName(pokemon, i) {
 	    	i += 1;
 	    	tablePokemons.append("<tr class=" + i + "><td>" + pokemon.name + "</td></tr>");
@@ -31,6 +53,10 @@ $( document ).ready(function() {
 	}
 
 	showPokemonImage();
+	*/
+
 });
+
+
 
 
